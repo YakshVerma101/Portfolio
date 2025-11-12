@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Yaksh Verma · Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grid-background" aria-hidden="true"></div>
+    <header class="top-nav" id="top-nav">
+      <a class="brand" href="#hero" aria-label="Yaksh Verma home">YV</a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon" aria-hidden="true"></span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <p class="overline">Hello, I'm Yaksh</p>
+          <h1>Designing thoughtful digital experiences that feel effortless.</h1>
+          <p class="subtitle">
+            I'm a product-focused developer crafting immersive, accessible, and
+            delightful web experiences from concept to launch.
+          </p>
+          <div class="hero-actions">
+            <a class="primary" href="#projects">View Projects</a>
+            <a class="secondary" href="#contact">Work Together</a>
+          </div>
+        </div>
+        <div class="hero-visual" role="presentation">
+          <div class="floating-card">
+            <span class="badge">Currently open to opportunities</span>
+            <h2>Full-Stack Developer</h2>
+            <p>
+              Passionate about creating high-performance, visually stunning web
+              experiences using modern technologies.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="about">
+        <div class="section-heading">
+          <p class="overline">About</p>
+          <h2>The short story</h2>
+        </div>
+        <div class="about-grid">
+          <article>
+            <p>
+              I blend design curiosity with engineering rigor to bring bold ideas
+              to the web. With a background in full-stack development, I thrive on
+              transforming complex problems into intuitive, elegant interfaces.
+            </p>
+            <p>
+              From rapid prototypes to production-grade applications, my work is
+              rooted in clean code, scalable architecture, and a relentless focus
+              on the end user.
+            </p>
+          </article>
+          <aside>
+            <ul class="traits">
+              <li>Human-centered development</li>
+              <li>Pixel-perfect implementation</li>
+              <li>Performance obsessed</li>
+              <li>Inclusive design advocate</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="skills" id="skills">
+        <div class="section-heading">
+          <p class="overline">Skills</p>
+          <h2>What I work with</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Frontend Craft</h3>
+            <p>React, Next.js, TypeScript, Tailwind CSS, Framer Motion</p>
+          </div>
+          <div class="skill-card">
+            <h3>Backend Engineering</h3>
+            <p>Node.js, Express, PostgreSQL, Prisma, REST & GraphQL APIs</p>
+          </div>
+          <div class="skill-card">
+            <h3>UX & UI Process</h3>
+            <p>Design systems, rapid prototyping, accessibility, usability testing</p>
+          </div>
+          <div class="skill-card">
+            <h3>Deliverables</h3>
+            <p>High-impact product features, performance audits, cloud-native apps</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects" id="projects">
+        <div class="section-heading">
+          <p class="overline">Projects</p>
+          <h2>Selected work</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-meta">
+              <p class="tag">AI / Web Platform</p>
+              <h3>Healthcare Monitoring AI</h3>
+              <p>
+                Built a predictive dashboard powering real-time patient risk
+                assessments, featuring custom data visualizations and HIPAA-ready
+                security.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/username/healthcare-monitoring-ai" target="_blank" rel="noopener" aria-label="View Healthcare Monitoring AI project">Visit project</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <p class="tag">Fintech / Mobile</p>
+              <h3>Smart MP3 Player</h3>
+              <p>
+                Designed a sleek cross-platform audio experience with AI-powered
+                recommendations, offline sync, and responsive gesture-based UI.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/username/smart-mp3-player" target="_blank" rel="noopener" aria-label="View Smart MP3 Player project">Visit project</a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-meta">
+              <p class="tag">Productivity / Web</p>
+              <h3>Idea Video Builder</h3>
+              <p>
+                Engineered an automated storytelling platform that converts raw
+                ideas into polished video scripts with editable scene sequencing.
+              </p>
+            </div>
+            <a class="project-link" href="https://github.com/username/idea-video-builder" target="_blank" rel="noopener" aria-label="View Idea Video Builder project">Visit project</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact" id="contact">
+        <div class="contact-card">
+          <p class="overline">Contact</p>
+          <h2>Let's build something extraordinary</h2>
+          <p>
+            I’d love to hear about your next project. Tell me what you’re working
+            on and how I can help bring it to life.
+          </p>
+          <form class="contact-form" action="https://formspree.io/f/mzbldpgr" method="POST">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required placeholder="Jane Doe" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="name@example.com" />
+            </div>
+            <div class="field">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Tell me about your idea"></textarea>
+            </div>
+            <button type="submit">Send message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Yaksh Verma. Crafted with precision and a bit of magic.</p>
+      <div class="socials">
+        <a href="https://github.com/username" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/username" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:hello@example.com">Email</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
