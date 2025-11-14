@@ -111,18 +111,12 @@ if (contactForm) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     
-    // Get form data
-    const formData = new FormData(contactForm);
-    const templateParams = {
-      from_name: formData.get('name'),
-      from_email: formData.get('email'),
-      message: formData.get('message'),
-      to_email: 'yakshverma101@gmail.com', // Your email address
-    };
-    
     try {
-      // Send email using EmailJS
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      // Send email using EmailJS sendForm method
+      // This automatically extracts form data and maps it to template variables
+      await emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, contactForm, {
+        publicKey: EMAILJS_PUBLIC_KEY
+      });
       
       // Success
       showMessage('Message sent successfully! I\'ll get back to you soon.', false);
