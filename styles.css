@@ -581,6 +581,9 @@ section {
 .contact-link svg {
   flex-shrink: 0;
   transition: var(--transition);
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .contact-link:hover svg {
