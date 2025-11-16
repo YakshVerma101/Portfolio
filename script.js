@@ -303,10 +303,39 @@ function initializeResumeButtons() {
   }
 }
 
+// Initialize email link handler
+function initializeEmailLink() {
+  const emailLink = document.querySelector('.email-link');
+  if (emailLink) {
+    emailLink.addEventListener('click', function(e) {
+      // Prevent default to handle via JavaScript
+      e.preventDefault();
+      
+      // Ensure mailto link works
+      const email = 'yakshverma101@gmail.com';
+      const subject = 'Contact from Portfolio';
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+      
+      // Try to open email client
+      try {
+        window.location.href = mailtoLink;
+      } catch (error) {
+        console.error('Error opening email client:', error);
+        // Fallback: show email address
+        alert(`Email: ${email}\n\nPlease copy this email address and send me a message!`);
+      }
+    });
+  }
+}
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializeResumeButtons);
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeResumeButtons();
+    initializeEmailLink();
+  });
 } else {
   // DOM is already loaded
   initializeResumeButtons();
+  initializeEmailLink();
 }
