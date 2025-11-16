@@ -73,9 +73,14 @@ function setupSmoothScroll() {
       const targetElement = document.getElementById(targetId);
       
       if (targetElement && nav) {
-        const navHeight = nav.offsetHeight + 60; // Nav height + extra spacing
+        // Calculate nav bar bottom position: top position (24px) + nav height + extra spacing
+        const navTop = 24; // Nav bar is positioned 24px from top
+        const navHeight = nav.offsetHeight;
+        const extraSpacing = 40; // Extra space for comfortable viewing
+        const totalOffset = navTop + navHeight + extraSpacing;
+        
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = Math.max(0, targetPosition - navHeight);
+        const offsetPosition = Math.max(0, targetPosition - totalOffset);
         
         window.scrollTo({
           top: offsetPosition,

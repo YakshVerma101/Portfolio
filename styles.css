@@ -37,7 +37,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 120px;
 }
 
 body {
@@ -152,7 +152,7 @@ main {
 
 section {
   margin-bottom: 120px;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
 
 .hero {
@@ -657,11 +657,11 @@ button:hover {
 
 @media (max-width: 600px) {
   html {
-    scroll-padding-top: 80px;
+    scroll-padding-top: 20px;
   }
   
   section {
-    scroll-margin-top: 80px;
+    scroll-margin-top: 20px;
   }
   
   .top-nav {
