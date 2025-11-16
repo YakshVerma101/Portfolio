@@ -35,13 +35,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
 body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: var(--bg);
   color: var(--fg);
   min-height: 100vh;
-  scroll-behavior: smooth;
   position: relative;
   overflow-x: hidden;
 }
@@ -148,6 +152,7 @@ main {
 
 section {
   margin-bottom: 120px;
+  scroll-margin-top: 100px;
 }
 
 .hero {
@@ -651,6 +656,14 @@ button:hover {
 }
 
 @media (max-width: 600px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+  
+  section {
+    scroll-margin-top: 80px;
+  }
+  
   .top-nav {
     position: static;
     transform: none;

@@ -54,6 +54,45 @@ prefersDark.addEventListener('change', (event) => {
 themeToggle.addEventListener('click', toggleTheme);
 window.addEventListener('scroll', updateNavAppearance);
 
+// Smooth scroll with offset for navigation links
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href === '#' || href === '#hero') {
+        // For hero, scroll to top
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+        return;
+      }
+      
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement && nav) {
+        const navHeight = nav.offsetHeight + 60; // Nav height + extra spacing
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = Math.max(0, targetPosition - navHeight);
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+}
+
+// Initialize smooth scroll when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupSmoothScroll);
+} else {
+  setupSmoothScroll();
+}
+
 initializeTheme();
 updateNavAppearance();
 handleReducedMotion();
