@@ -195,3 +195,74 @@ if (contactForm) {
     }
   });
 }
+
+// Resume Download Handler
+async function downloadResume() {
+  const resumePath = 'resume/Yaksh_Verma_Resume.pdf';
+  const fileName = 'Yaksh_Verma_Resume.pdf';
+  
+  try {
+    // Fetch the file
+    const response = await fetch(resumePath);
+    if (!response.ok) {
+      throw new Error('Failed to fetch resume');
+    }
+    
+    // Create a blob from the response
+    const blob = await response.blob();
+    const url = window.URL.createObjectURL(blob);
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = fileName;
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link);
+    link.click();
+    
+    // Clean up
+    setTimeout(() => {
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    }, 100);
+  } catch (error) {
+    console.error('Download error:', error);
+    // Fallback: open in new tab if download fails
+    window.open(resumePath, '_blank');
+  }
+}
+
+// Resume View Handler
+function viewResumeInNewTab() {
+  const resumePath = 'resume/Yaksh_Verma_Resume.pdf';
+  window.open(resumePath, '_blank', 'noopener,noreferrer');
+}
+
+// Initialize resume buttons
+function initializeResumeButtons() {
+  const downloadBtn = document.querySelector('.resume-download-btn');
+  const viewBtn = document.querySelector('.resume-view-btn');
+  
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      downloadResume();
+    });
+  }
+  
+  if (viewBtn) {
+    viewBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      viewResumeInNewTab();
+    });
+  }
+}
+
+// Initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializeResumeButtons);
+} else {
+  // DOM is already loaded
+  initializeResumeButtons();
+}

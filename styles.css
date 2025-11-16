@@ -491,6 +491,8 @@ section {
   text-decoration: none;
   transition: var(--transition);
   font-size: 0.95rem;
+  cursor: pointer;
+  font-family: inherit;
 }
 
 .resume-download-btn {
